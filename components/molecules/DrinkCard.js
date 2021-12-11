@@ -8,7 +8,7 @@ function DrinkCard({ drink }) {
       <Image className={ CardStyle.image } src={drink.image.url} alt={ drink.name } width={ 310 } height={ 230 } layout="responsive"/>
       <div className={ CardStyle.cardText }>
         <h2>{ drink.name }</h2>
-        <p>{ drink.quote }</p>
+        <p>" { drink.quote } "</p>
       </div>
       {/* <div className={ CardStyle.buttonWrapper }>
         <button className={` btn-base-style ${ CardStyle.addToOrder }`}>
