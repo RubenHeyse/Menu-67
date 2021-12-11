@@ -16,11 +16,11 @@ $navbar-height:60px;
 
 .itemWrapper{
   background-color: transparent;
-  h1{
-    color: white;
-  }
 }
 
+.logoText{
+  color: white !important;
+}
 .contentWrapper{
   max-width: var.$size-maxContentWidth;
   height: 100%;
