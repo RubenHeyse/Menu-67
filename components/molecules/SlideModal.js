@@ -21,16 +21,16 @@ function SlideModal({ drinkData }){
             placeholder={() => <div style={{backgroundColor: 'grey'}} />}/>
         </div>
         <hr className={ ModalStyle.line }/>
-        <ul className={ ModalStyle.drinkStats }>
-          <li key={1} className={ ModalStyle.statListItem }>
+        <div className={ ModalStyle.drinkStats }>
+          <div className={ ModalStyle.statListItem }>
             <p className={ ModalStyle.statName } >Sweetness: </p>
             <p className={ ModalStyle.statData } >{ drinkData.sweetness?drinkData.sweetness:"?" }/5</p>
-          </li>
-          <li key={2} className={ ModalStyle.statListItem }>
+          </div>
+          <div className={ ModalStyle.statListItem }>
             <p className={ ModalStyle.statName } >Strength: </p>
             <p className={ ModalStyle.statData } >{ drinkData.strength?drinkData.strength:"?" }/5</p>
-          </li>
-        </ul>
+          </div>
+        </div>
         <hr className={ ModalStyle.line }/>
         <div className={ ModalStyle.ingredientList }>
           {ingredients.map(i => {
@@ -44,7 +44,7 @@ function SlideModal({ drinkData }){
           })}
         </div>
         <div>
-          <p>{ drinkData.tastingNotes }</p>
+          <p>{ drinkData.tastingNotes === null ? drinkData.quote : drinkData.tastingNotes }</p>
         </div>
         {/* <div className={ ModalStyle.btnWrapper }>
           <button className={ ModalStyle.orderBtn } onClick={() => dispatch(addToCart(drinkData))}>
