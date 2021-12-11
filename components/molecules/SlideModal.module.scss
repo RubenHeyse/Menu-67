@@ -5,11 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
 
 
-$modalWidth: 550px;
+$modalWidth: 80vw;
 
 .modal{ 
   width: $modalWidth;
-  max-width: var.$size-tabletWidth;
+  max-width: 550px;
   background-color: white;
   height: 100%;
   position: relative;
