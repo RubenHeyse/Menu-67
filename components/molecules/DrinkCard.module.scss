@@ -3,7 +3,7 @@
 @use '../../styles/mixins' as mix;
 
 $desktop-card-width: 310px;
-$desktop-card-height: 400px;
+$desktop-card-height: 420px;
 $tablet-card-width: 80vw;
 $tablet-card-height: 100px;
 $mobile-card-width: 80vw;
@@ -18,6 +18,12 @@ $mobile-card-height: 70px;
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
+.imageWrapper{
+  position: relative;
+  width: 100%;
+  height: 230px;
 }
 
 .image{
