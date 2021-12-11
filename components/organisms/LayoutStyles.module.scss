@@ -1,0 +1,10 @@
+@use '../molecules/NavBar.module.scss' as nav;
+
+.main{
+  width: 100vw;
+}
+
+.mainContent{
+  padding-top: nav.$navbar-height;
+  min-height: 100vh;
+}

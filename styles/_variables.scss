@@ -1,0 +1,27 @@
+//SIZES
+$size-mobileWidth: 600px;
+$size-tabletWidth: 1000px;
+$size-maxContentWidth: 1630px;
+
+//FONT SIZES
+$font-display: 50px;
+$font-heading: 32px;
+$font-sub-heading: 28px;
+$font-body: 16px;
+
+// LIGHT MODE
+$primary-color: hsl(196,100%,26%) !default;
+$accent-color: hsl(0,100%,50%) !default;
+$accent-color_hover: darken($accent-color, 10%);
+$header-color: black;
+$body-color: hsl(0,0%,46%);
+$background-color: hsl(0,0%,92%);
+
+$dark-theme: false !default;
+
+@if $dark-theme {
+	$primary-color: darken($primary-color, 60%);
+	$accent-color: lighten($accent-color, 60%);
+	$header-color: lighten($header-color, 100%);
+	$body-color: lighten($body-color, 60%);
+}

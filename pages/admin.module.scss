@@ -1,0 +1,64 @@
+@use "../styles/variables" as var;
+
+.pageWrapper{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+}
+
+.drinksWrapper{
+  width: 50%;
+  height: 100%;
+  border-right: 1px solid #000;
+  padding: 5% 10%;
+}
+
+.drink{
+  cursor: pointer;
+  p{
+    color: black !important;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+}
+
+.infoWrapper{
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+}
+
+.ingredientList{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  font-family: 'Karla', sans-serif;
+  // font-size: 1.5em;
+}
+
+.ingredient{
+
+  &::after{
+    display: inline-block;
+    margin: 0.2rem 0.4rem;
+    content: "";
+    width: 5px;
+    aspect-ratio: 1;
+    background-color: var.$header-color;
+    border-radius: 50%;
+  }
+
+  &:last-child::after{
+    content: none;
+  }
+}

@@ -1,0 +1,41 @@
+@use '../../styles/variables' as var;
+
+$navbar-height:60px;
+
+.header{
+  position: fixed;
+  background-color: var.$primary-color;
+  width: 100vw;
+  height: $navbar-height;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.itemWrapper{
+  background-color: transparent;
+  h1{
+    color: white;
+  }
+}
+
+.contentWrapper{
+  max-width: var.$size-maxContentWidth;
+  height: 100%;
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.viewOrderBtn{
+  background-color: transparent;
+}
+
+@media (max-width: var.$size-tabletWidth){
+  .header{
+    padding: 0 10vw;
+  }
+}

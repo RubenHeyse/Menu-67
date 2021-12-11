@@ -1,0 +1,72 @@
+@use '../molecules/NavBar.module.scss' as nav;
+@use "../molecules/DrinkCard.module.scss" as card;
+@use "../../styles/variables" as var;
+@use "../molecules/SlideModal.module.scss" as modal;
+
+.list{
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, card.$desktop-card-width);
+  max-width: 1000px;
+  justify-content: left;
+  margin: 5vh 0;
+}
+
+.listElement{
+  cursor: pointer;
+  transition: ease-in 100ms;
+  border-radius: 10px;
+
+  &:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
+
+.modalWrapper {
+  top: nav.$navbar-height;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  display: none;
+  z-index: 10;
+  transition: 300ms;
+
+  &.show{
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.overlay{
+  background-color: rgba(0, 0, 0, .55);
+  position: fixed;
+  display: block;
+  z-index: 5;
+  height: 100%;
+  width: 100%;
+}
+
+.modal{
+  right: modal.$modalWidth;
+  transition: ease-in 300ms;
+  display: block;
+
+  &.show{
+    display: block;
+    right: 0;
+  }
+}
+
+.stopScroll{
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: var.$size-tabletWidth){
+  .list{
+    grid-template-columns: card.$tablet-card-width;
+    grid-template-rows: repeat(auto-fit, card.$tablet-card-height);
+    justify-content: left;
+  }
+}

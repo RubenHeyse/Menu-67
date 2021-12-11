@@ -1,0 +1,166 @@
+@use '../../styles/variables' as var;
+@use '../molecules/NavBar.module.scss' as nav;
+@use '../../styles/mixins' as mix;
+
+$desktop-card-width: 310px;
+$desktop-card-height: 400px;
+$tablet-card-width: 80vw;
+$tablet-card-height: 100px;
+$mobile-card-width: 80vw;
+$mobile-card-height: 70px;
+
+.cardWrapper{
+  @include mix.boxShadow;
+  width: $desktop-card-width;
+  height: $desktop-card-height;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.image{
+  width: 100%;
+  aspect-ratio: 0.9;
+  border-radius: 10px 10px 20px 20px;
+  object-fit: cover;
+}
+
+.cardText{
+  padding: 0 15px;
+  
+  h2{
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5em;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+.buttonWrapper{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.addToOrder{
+  height: 100%;
+  aspect-ratio: 1;
+  padding: 10px;
+  background-color: var.$accent-color;
+  border-radius: 10px 0 10px 0;
+  transition: ease-in 0.15s;
+
+  &:hover{
+    background-color: var.$accent-color_hover;
+  }
+}
+
+@media (max-width: var.$size-tabletWidth){
+
+  $image-width: $tablet-card-height*1.1;
+
+  .cardWrapper{
+    width: $tablet-card-width;
+    height: $tablet-card-height;
+    display: grid;
+    grid-template-columns: $image-width auto 80px;
+    grid-template-areas: "photo text button";
+    gap: 0.5em;
+  }
+
+  .image{
+    left: 0;
+    top: 0;
+    height: 100% !important;
+    width: $image-width !important;
+    border-radius: 10px 0 0 10px;
+    object-fit: cover;
+    grid-area: photo;
+  }
+
+  .cardText{
+    max-width: 600px;
+    grid-area: text;
+
+    h2{
+      margin-bottom: 0.2em;
+    }
+
+    p{
+      margin: 0;
+    }
+  }
+
+  .buttonWrapper{
+    height: 100%;
+    width: 40px;
+    grid-area: button;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .addToOrder{
+    height: 40px;
+  }
+}
+
+@media (max-width: var.$size-mobileWidth){
+
+  $image-width: $mobile-card-height*1.1;
+
+  .cardWrapper{
+    width: $mobile-card-width;
+    height: $mobile-card-height;
+    display: grid;
+    grid-template-columns: $image-width auto 80px;
+    grid-template-areas: "photo text button";
+    gap: 0.5em;
+  }
+
+  .image{
+    left: 0;
+    top: 0;
+    height: $mobile-card-height !important;
+    width: $image-width !important;
+    border-radius: 10px 0 0 10px;
+    object-fit: cover;
+    grid-area: photo;
+  }
+
+  .cardText{
+    max-width: 600px;
+    grid-area: text;
+
+    h2{
+      margin-bottom: 0.2em;
+    }
+
+    p{
+      margin: 0;
+    }
+  }
+
+  .buttonWrapper{
+    height: 100%;
+    width: 40px;
+    grid-area: button;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .addToOrder{
+    height: 40px;
+  }
+}

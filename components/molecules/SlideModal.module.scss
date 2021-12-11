@@ -1,0 +1,155 @@
+@use '../../styles/variables' as var;
+@use '../../styles/mixins' as mix;
+@use '../molecules/NavBar.module.scss' as nav;
+
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+
+$modalWidth: 550px;
+
+.modal{ 
+  width: $modalWidth;
+  max-width: var.$size-tabletWidth;
+  background-color: white;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  padding: 2em;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  hr{
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+.drinkName{
+  font-family: 'Spectral', serif;
+  font-size: var.$font-display;
+  text-align: center;
+}
+
+.imageWrapper {
+  width: 310px;
+  aspect-ratio: 1;
+  position: relative;
+
+}
+
+.image{
+  object-fit: contain;
+  object-position: center;
+}
+
+.drinkStats{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.statListItem{
+  display: flex;
+  flex-direction: row;
+  p{
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.statName{
+  padding-right: 0.2em;
+}
+
+.statListItem, .ingredient{
+  p{
+    color: black !important;
+  }
+}
+
+.statListItem{
+  font-weight: bold;
+}
+
+.ingredientList{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.5em;
+}
+
+.ingredient{
+
+  &::after{
+    display: inline-block;
+    margin: 0.4rem;
+    content: "";
+    width: 5px;
+    aspect-ratio: 1;
+    background-color: var.$header-color;
+    border-radius: 50%;
+  }
+
+  &:last-child::after{
+    content: none;
+  }
+}
+
+.btnWrapper{
+  width: 100%;
+}
+
+.orderBtn{
+  border: 0;
+  background-color: transparent;
+  border: 2px solid var.$accent-color;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+  transition: ease 1000ms;
+  margin-top: 1rem;
+  p{
+    position: relative;
+    z-index: 1000;
+    font-size: 1.2em;
+    color: var.$accent-color;
+    padding: 0;
+    margin: 0;
+  }
+
+  // .hoverFill{
+  //   display: inline-block;
+  //   position: absolute;
+  //   content: "";
+  //   background-color: var.$accent-color;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  //   height: 0%;
+  //   z-index: 0;
+  //   transition: height 300ms;
+  // }
+
+  // &:hover{
+  //   color: white;
+
+  //   .hoverFill{
+  //     display: inline-block;
+  //     position: absolute;
+  //     content: "";
+  //     background-color: var.$accent-color;
+  //     bottom: 0;
+  //     left: 0;
+  //     right: 0;
+  //     height: 100%;
+  //   }
+  // }
+}

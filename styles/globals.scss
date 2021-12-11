@@ -1,0 +1,94 @@
+@use 'variables' as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,800;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var.$background-color;
+  background-image: url("../public/svg/background_pattern.svg");
+  background-repeat: repeat;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header-display{
+  font-family: 'Spectral', serif;
+  font-size: var.$font-display;
+}
+
+h1{
+  font-family: 'Spectral', serif;
+  font-size: var.$font-heading;
+  font-weight: normal;
+  margin: 0;
+}
+
+h2{
+  font-family: 'Spectral', serif;
+  font-size: var.$font-sub-heading;
+  font-style: italic;
+}
+
+p{
+  font-family: 'Karla', sans-serif;
+  font-size: var.$font-body;
+  color: var.$body-color;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img{
+  margin: 0;
+}
+
+.accentText{
+  color: var.$accent-color;
+}
+
+.accentBg{
+  background-color: var.$accent-color;
+}
+
+.btn-base-style{
+  border: 0;
+  cursor: pointer;
+}
+
+@media (max-width: var.$size-tabletWidth){
+  $font-size-multiplier: 0.8;
+
+  .header-display{
+    font-size: var.$font-display * $font-size-multiplier;
+  }
+  
+  h1{
+    font-size: var.$font-heading * $font-size-multiplier;
+  }
+  
+  h2{
+    font-size: var.$font-sub-heading * $font-size-multiplier;
+  }
+  
+  p{
+    font-size: var.$font-body * $font-size-multiplier;
+  }
+}
+
+@media (max-width: var.$size-mobileWidth){
+
+}
