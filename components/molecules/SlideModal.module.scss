@@ -12,7 +12,7 @@ $modalWidth: 550px;
   max-width: var.$size-tabletWidth;
   background-color: white;
   height: 100%;
-  position: fixed;
+  position: relative;
   z-index: 10;
   padding: 2em;
   overflow-y: auto;
