@@ -5,7 +5,9 @@ import Image from 'next/image'
 function DrinkCard({ drink }) {
   return(
     <div className={ CardStyle.cardWrapper }>
-      <Image className={ CardStyle.image } src={drink.image.url} alt={ drink.name } width={ 310 } height={ 230 } layout="responsive"/>
+      <div className={ CardStyle.imageWrapper }>
+        <Image className={ CardStyle.image } src={drink.image.url} alt={ drink.name } layout="fill"/>
+      </div>
       <div className={ CardStyle.cardText }>
         <h2>{ drink.name }</h2>
         <p>" { drink.quote } "</p>
