@@ -90,5 +90,13 @@ img{
 }
 
 @media (max-width: var.$size-mobileWidth){
+  $font-size-multiplier: 0.6;
 
+  .header-display{
+    font-size: var.$font-display * $font-size-multiplier;
+  }
+  
+  h2{
+    font-size: var.$font-sub-heading * $font-size-multiplier;
+  }
 }

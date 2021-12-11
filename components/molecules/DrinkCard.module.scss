@@ -120,11 +120,13 @@ $mobile-card-height: 70px;
 
   .cardWrapper{
     width: $mobile-card-width;
-    height: $mobile-card-height;
+    height: auto;
+    min-height: 80px;
     display: grid;
-    grid-template-columns: $image-width auto 80px;
-    grid-template-areas: "photo text button";
+    grid-template-columns: $image-width auto;
+    grid-template-areas: "photo text";
     gap: 0.5em;
+
   }
 
   .image{
@@ -140,6 +142,7 @@ $mobile-card-height: 70px;
   .cardText{
     max-width: 600px;
     grid-area: text;
+    margin-bottom: 10px;
 
     h2{
       margin-bottom: 0.2em;
