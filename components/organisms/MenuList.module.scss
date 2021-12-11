@@ -51,11 +51,9 @@
   right: modal.$modalWidth;
   transition: ease-in 300ms;
   display: block;
+  right: 0;
 
-  &.show{
-    display: block;
-    right: 0;
-  }
+  
 }
 
 .stopScroll{
