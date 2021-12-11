@@ -29,14 +29,14 @@ function NavBar() {
     <header className={ NavBarStyle.header }>
       <div className={NavBarStyle.contentWrapper }>
         <Link href="/" className={ NavBarStyle.itemWrapper }>
-          <h1 id="logo-text">Menu <span className="accentText">67</span></h1>
+          <h1 className={ NavBarStyle.logoText }>Menu <span className="accentText">67</span></h1>
         </Link>
-        <div className={ NavBarStyle.itemWrapper }>
+        {/* <div className={ NavBarStyle.itemWrapper }>
           <Link href="/cart" className={ `btn-base-style ${ NavBarStyle.viewOrderBtn }` }>
             <Image className={ NavBarStyle.shoppingBagSVG} src="/svg/shopping-cart-icon.svg" alt="View cart" height={35} width={30}/>
           </Link>
           {cartTotal()}
-        </div>
+        </div> */}
       </div>
     </header>
   )
