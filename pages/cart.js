@@ -1,58 +1,60 @@
-import Image from 'next/image';
 // Importing hooks from react-redux
-import { useSelector, useDispatch } from 'react-redux';
+import { GraphQLClient } from 'graphql-request';
+import Image from 'next/image';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  incrementQuantity,
   decrementQuantity,
+  incrementQuantity,
   removeFromCart,
 } from '../redux/cart.slice';
-import { useState } from 'react';
-import { GraphQLClient } from 'graphql-request'
 
 import styles from './cart.module.scss';
 
-// export async function handleSubmit(name, notes, drinksOrdered){
-  // const graphcms = new GraphQLClient(
-  //   process.env.PRODUCTION_GRAPH_CMS_ENDPOINT,
-  //   {
-  //       headers: {
-  //           Authorization: process.env.PRODUCTION_GRAPH_CMS_TOKEN
-  //       }
-  //   }
-  // ); 
 
-//   let drinks_array=[]
-//   for (let i in drinksOrdered){
-//     drinks_array[i]= {id:`${drinksOrdered}`}
-//   }
-//   console.log(drinks_array)
+export async function handleSubmit(name, notes, drinksOrdered){
+  const graphcms = new GraphQLClient(
+    process.env.PRODUCTION_GRAPH_CMS_ENDPOINT,
+    {
+        headers: {
+            Authorization: process.env.PRODUCTION_GRAPH_CMS_TOKEN
+        }
+    }
+  ); 
 
-//   // QUERY DATA FROM GRAPHCMS
-//   const order = await graphcms.request(`
-//     mutation CreateOrder {
-//       createOrder(
-//         data: {
-//           customerName: ${name}, 
-//           drinks: {
-//             connect: ${drinks_array}
-//           }, 
-//           notes: ${notes}
-//         }) 
-//         {
-//         id
-//         createdAt
-//         customerName
-//         notes
-//       }
-//     }
-//   `);
+  let drinks_array=[]
+  for (let i in drinksOrdered){
+    drinks_array[i]= {id:`${drinksOrdered}`}
+  }
+  console.log(drinks_array)
 
-//   return {
-//       props: {
-//           order,
-//       },
-//   }
-// }
+  let orderData = {}
+
+  orderData = {
+    customerName: name, 
+    drinks: {
+      connect: drinks_array
+    }, 
+    notes: notes
+  }
+
+  // QUERY DATA FROM GRAPHCMS
+  const order = await graphcms.request(`
+  mutation createOrder($orderData: ${orderData}) {
+    createOrder(data: $orderData) {
+      id
+      customerName
+      createdAt
+    }
+  }
+  `);
+
+  return {
+      props: {
+          order,
+      },
+  }
+}
 
 const CartPage = () => {
 
@@ -77,9 +79,9 @@ const CartPage = () => {
         <>
           {cart.map((item, i) => (
             <div key={i} className={styles.body}>
-              {/* <div className={styles.image}>
+              <div className={styles.image}>
                 <Image src={item.image.url} height="90" width="65" alt={item.name}/>
-              </div> */}
+              </div>
               <p>{item.name}</p>
               <p>Quantity: {item.quantity}</p>
               <div className={styles.buttons}>

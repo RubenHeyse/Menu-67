@@ -1,7 +1,7 @@
+import { GraphQLClient } from 'graphql-request';
+import HeroBanner from '../components/molecules/HeroBanner';
 import MenuList from '../components/organisms/MenuList';
-import HeroBanner from '../components/molecules/HeroBanner'
-import { GraphQLClient } from 'graphql-request'
-import IndexStyle from "./Index.module.scss"
+import IndexStyle from "./Index.module.scss";
 
 
 export async function getStaticProps() {

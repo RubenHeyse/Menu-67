@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "menu-67",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,14 +8,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.6.2",
+    "@reduxjs/toolkit": "^1.9.5",
     "@svgr/webpack": "^5.5.0",
+    "classnames": "^2.3.2",
     "dotenv": "^10.0.0",
     "graphql-request": "^3.6.1",
-    "next": "^12.0.4",
+    "next": "^12.3.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6",
+    "react-redux": "^7.2.9",
     "sass": "^1.43.4",
     "svgo": "^2.8.0",
     "uuid": "^8.3.2"

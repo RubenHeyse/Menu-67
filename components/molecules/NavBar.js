@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/link-passhref */
-import NavBarStyle from './NavBar.module.scss'
-import Image from 'next/image'
-import Link from 'next/link'
+import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import NavBarStyle from './NavBar.module.scss';
 
 function NavBar() {
 
